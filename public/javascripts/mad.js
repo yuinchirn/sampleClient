@@ -13,8 +13,8 @@ musicMark.src = 'https://s3-ap-northeast-1.amazonaws.com/mad-test/images.png';
 musicMark.style.position = 'relative';
 musicMark.style.marginLeft = 'auto';
 musicMark.style.marginRight = 'auto';
-musicMark.style.height = '200px';
-musicMark.style.width = '200px';
+musicMark.style.height = '100px';
+musicMark.style.width = '100px';
 
 // 広告音用のaudioタグを用意
 var audio = document.createElement('audio');
@@ -46,7 +46,26 @@ musicMark.addEventListener( "click" , function () {
 	bannerImg.style.width = '300px';
 
 	banner.appendChild(bannerImg);
-	adAreaParent.insertBefore(banner,adArea);
+	var list1 = document.createElement('li');
+	list1.style.listStyle = 'none';
+	list1.appendChild(banner);
+	adAreaParent.insertBefore(list1,adArea);
+
+	var stopBtn = document.createElement('img');
+	stopBtn.src = 'https://s3-ap-northeast-1.amazonaws.com/mad-test/stop.jpg'
+	stopBtn.style.position = 'relative';
+	stopBtn.style.marginLeft = 'auto';
+	stopBtn.style.marginRight = 'auto';
+	stopBtn.style.height = '30px';
+	stopBtn.style.width = '30px';
+	stopBtn.addEventListener( "click" , function () {
+		document.getElementById('audio').pause();
+	});
+
+	var list2 = document.createElement('li');
+	list2.style.listStyle = 'none';
+	list2.appendChild(stopBtn);
+	adAreaParent.insertBefore(list2,adArea);
 
 	ga('send', 'event',  'click', 'musicMark', 'musicMark');
 } , false );
