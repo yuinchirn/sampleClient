@@ -42,7 +42,7 @@ musicMark.addEventListener( "click" , function () {
   	var banner = document.createElement('a');
 	banner.id = 'banner';
 	banner.href = 'http://rijfes.jp/';
-	banner.onclick = ga('mad.send', 'event',  'click', 'banner', 'banner');
+	banner.onclick = ga('mad.send', 'event',  'click', 'banner', 'merry');
 	var bannerImg = document.createElement('img');
 	bannerImg.src = 'https://s3-ap-northeast-1.amazonaws.com/mad-test/live_img.jpg'
 	bannerImg.style.height = '200px';
@@ -72,7 +72,7 @@ musicMark.addEventListener( "click" , function () {
 	list2.appendChild(stopBtn);
 	adContent.appendChild(list2);
 	
-	ga('mad.send', 'event', 'click', 'musicMark', 'musicMark');
+	ga('mad.send', 'event', 'click', 'musicMark', 'merry');
 } , false );
 
 adContent.appendChild(musicMark);
